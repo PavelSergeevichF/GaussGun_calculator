@@ -1,0 +1,16 @@
+D:\Архив\хобби\гаусс\проект\GaussGun\GaussGun\bin\Debug\netcoreapp3.1\GaussGun.exe
+D:\Архив\хобби\гаусс\проект\GaussGun\GaussGun\bin\Debug\netcoreapp3.1\GaussGun.deps.json
+D:\Архив\хобби\гаусс\проект\GaussGun\GaussGun\bin\Debug\netcoreapp3.1\GaussGun.runtimeconfig.json
+D:\Архив\хобби\гаусс\проект\GaussGun\GaussGun\bin\Debug\netcoreapp3.1\GaussGun.runtimeconfig.dev.json
+D:\Архив\хобби\гаусс\проект\GaussGun\GaussGun\bin\Debug\netcoreapp3.1\GaussGun.dll
+D:\Архив\хобби\гаусс\проект\GaussGun\GaussGun\bin\Debug\netcoreapp3.1\GaussGun.pdb
+D:\Архив\хобби\гаусс\проект\GaussGun\GaussGun\obj\Debug\netcoreapp3.1\GaussGun.Form1.resources
+D:\Архив\хобби\гаусс\проект\GaussGun\GaussGun\obj\Debug\netcoreapp3.1\GaussGun.Properties.Resources.resources
+D:\Архив\хобби\гаусс\проект\GaussGun\GaussGun\obj\Debug\netcoreapp3.1\GaussGun.csproj.GenerateResource.cache
+D:\Архив\хобби\гаусс\проект\GaussGun\GaussGun\obj\Debug\netcoreapp3.1\GaussGun.AssemblyInfoInputs.cache
+D:\Архив\хобби\гаусс\проект\GaussGun\GaussGun\obj\Debug\netcoreapp3.1\GaussGun.AssemblyInfo.cs
+D:\Архив\хобби\гаусс\проект\GaussGun\GaussGun\obj\Debug\netcoreapp3.1\GaussGun.csproj.CoreCompileInputs.cache
+D:\Архив\хобби\гаусс\проект\GaussGun\GaussGun\obj\Debug\netcoreapp3.1\GaussGun.dll
+D:\Архив\хобби\гаусс\проект\GaussGun\GaussGun\obj\Debug\netcoreapp3.1\GaussGun.pdb
+D:\Архив\хобби\гаусс\проект\GaussGun\GaussGun\obj\Debug\netcoreapp3.1\GaussGun.genruntimeconfig.cache
+D:\Архив\хобби\гаусс\проект\GaussGun\GaussGun\obj\Debug\netcoreapp3.1\GaussGun.csproj.AssemblyReference.cache
