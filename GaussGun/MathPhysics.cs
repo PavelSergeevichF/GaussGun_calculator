@@ -70,20 +70,28 @@ namespace GaussGun
         {
             return I * I * Li / 2;
         }
-        private double calculate_F_n(double B, float I, float L)
+        private double calculate_F_n()//рассчет силы в ньютонах
         {
-            return B * I * L;
+            double B=2,//B - индукция насыщения железа = 2 Тл
+                H,//Магнитное поле идеального соленоида: H = N I / L
+                S,//- площадь сечения подвижного сердечника
+                tmp;
+            int N = W_row;
+            H = N*I_tok / L_long;
+            tmp = D_gun / 2;
+            S = tmp * tmp * 3.1415;
+            return B * H * S/3;
         }
-        private double calculate_T_c(double C, float R)
+        private double calculate_T_c()
         {
-            return R * C;
+            return R_resist * F_fr;
         }
         private float mathSLong(float S) { return S / 2; }
-        private double mathSpeed(double Speed0, double F, float mass, float LongS)
+        private double mathSpeed()
         {
             double DeltaSpeed = 0;
-            double a_us=F/mass;
-            float sLong = mathSLong(LongS)/1000;
+            double a_us= F_n / MassBullet;
+            float sLong = (L_long / 2) /1000;
             double tempSpeed = 2 * a_us * sLong;
             DeltaSpeed = Math.Sqrt(tempSpeed)+ Speed0;
             return DeltaSpeed; 
@@ -102,11 +110,11 @@ namespace GaussGun
             R_resist = ResistSolinoid(Dp, Lp);
             I_tok = U_v / R_resist;
             calculate_pow(U_v, I_tok);
-            B_magnet = calculate_B_magnet(I_tok, (float)calculate_induc(W_row, D_solinoid_big));
-            F_n = calculate_F_n(B_magnet, I_tok, Lp);
-            T_c = calculate_T_c(F_fr, R_resist);
+            B_magnet = calculate_B_magnet(I_tok, (float)calculate_induc(W_row, D_solinoid_big));//магнитный поток
+            F_n = calculate_F_n();
+            T_c = calculate_T_c();
             MassBull(L_long);
-            Speed = mathSpeed(Speed0, F_n, MassBullet, L_long/2);
+            Speed = mathSpeed();
         }
         public void Str_Out_result()
         {

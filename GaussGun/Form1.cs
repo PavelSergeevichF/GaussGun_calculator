@@ -12,51 +12,36 @@ namespace GaussGun
 {
     public partial class Form1 : Form
     {
-        /*
-                 * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                 * рассчет под цилиндр
-                 * добавить поле диапазона и шага
-                 * расчитать конечную скорось
-                 * добавить графики на OpenGl
-                 */
-        //420y X 580x
         MathPhysics mathPhysics_Static = new MathPhysics();
         MathSteps mathSteps = new MathSteps();
         static Bitmap bmp;
         protected Graphics graph;
-        Pen penG, penB, penR;
-        double[] data_graf1 = new double[3];
-        double[] data_graf2 = new double[3];
+        Pen penG, penB;
+        double data_changeable_start, data_changeable_finish;
         public Form1()
         {
             InitializeComponent();
             bmp = new Bitmap(1500, 1500);
             graph = Graphics.FromImage(bmp);
-            radioButton1.Checked = true;
             comboBox1.Text = "Изменяемое 1";
+            checkBox1.Checked = true;
             comboBox1.Items.AddRange(new object[]{
             "Напряжение V", "Длинна катушки", "Диаметр катушки внешний", "Диаметр катушки внутренний",
                 "Диаметр ствола-снаряда", "Диаметр провода", "толщина изаляции", "Емкость конденсатора"
             });
             comboBox1.SelectedIndex = 0;
-            comboBox2.Text = "Изменяемое 2";
+            comboBox2.Text = "Расчитываемое 1";
             comboBox2.Items.AddRange(new object[]{
-            "Напряжение V", "Длинна катушки", "Диаметр катушки внешний", "Диаметр катушки внутренний",
-                "Диаметр ствола-снаряда", "Диаметр провода", "толщина изаляции", "Емкость конденсатора"
+            "мощность", "Напряжение", "ток","N витков","L проводника","R катушки",
+                "вектор магн. индукции","сила втягивания","конденсатор","T разряда","Начальная V снаряда"
             });
-            comboBox2.SelectedIndex = 5;
-            comboBox3.Text = "Расчитываемое 1";
+            comboBox2.SelectedIndex = 10;
+            comboBox3.Text = "Расчитываемое 2";
             comboBox3.Items.AddRange(new object[]{
             "мощность", "Напряжение", "ток","N витков","L проводника","R катушки",
                 "вектор магн. индукции","сила втягивания","конденсатор","T разряда","Начальная V снаряда"
             });
-            comboBox3.SelectedIndex = 10;
-            comboBox4.Text = "Расчитываемое 2";
-            comboBox4.Items.AddRange(new object[]{
-            "мощность", "Напряжение", "ток","N витков","L проводника","R катушки",
-                "вектор магн. индукции","сила втягивания","конденсатор","T разряда","Начальная V снаряда"
-            });
-            comboBox4.SelectedIndex = 7;
+            comboBox3.SelectedIndex = 7;
             
         }
         
@@ -71,17 +56,13 @@ namespace GaussGun
             mathPhysics_Static.D_gun = mathPhysics_Static.CheckErrF(textBoxDGun.Text);//диаметр ствола снаряда
             mathPhysics_Static.Dp = mathPhysics_Static.CheckErrF(textBoxDp.Text);//"Диаметр провода"
             mathPhysics_Static.Speed0 = mathPhysics_Static.CheckErrD(textBoxSpeed0.Text);
-            data_graf1[0] = mathPhysics_Static.CheckErrD(textBoxListStart1.Text);
-            data_graf1[1] = mathPhysics_Static.CheckErrD(textBoxListStop1.Text);
-            data_graf1[2] = mathPhysics_Static.CheckErrD(textBoxListStep1.Text);
-            data_graf2[0] = mathPhysics_Static.CheckErrD(textBoxListStart2.Text);
-            data_graf2[1] = mathPhysics_Static.CheckErrD(textBoxListStop2.Text);
-            data_graf2[2] = mathPhysics_Static.CheckErrD(textBoxListStep2.Text);
+            data_changeable_start = mathPhysics_Static.CheckErrD(textBoxListStart1.Text);
+            data_changeable_finish = mathPhysics_Static.CheckErrD(textBoxListStop1.Text);
         }
         private void Out_result()
         {
             GetData();
-            if (radioButton1.Checked)
+            if (checkBox1.Checked)
             {
                 mathPhysics_Static.Str_Out_result();
                 textBoxOut.Text = mathPhysics_Static.textOut;
@@ -89,53 +70,39 @@ namespace GaussGun
             else
             {
                 graph.Clear(Color.Black);
-                draw();
+                draw_graf();
                 pictureBoxGraf.Image = bmp;
             }
-
         }
-        void draw()
+        void draw_graf()
         {
-            int x_start1=0, x_stop1=580, y_start1 = 400, y_fin1 = 400, x_step1 = 0, y_step1 = 0;
-            int x_start2 = 0, x_stop2 = 580, y_start2 = 400, y_fin2 = 400, x_step2 = 0, y_step2 = 0;
-            y_step1 = (int)data_graf1[2] * 10;
-            y_step2 = (int)data_graf2[2] * 10;
-            x_step1 = (int)(580/(data_graf1[1]/ data_graf1[2]));
-            x_step2 = (int)(580/(data_graf2[1] / data_graf2[2]));
-
-
-            if (data_graf1[2] <0.001 || data_graf2[2] < 0.001)
-            {
-                textBoxOut.Text = "Слишком малый шаг или равен 0";
-                return;
-            }
             GetData();
-            set_data_Changes(comboBox1.SelectedIndex, data_graf1[1]);
+
+            set_data_Changes(comboBox1.SelectedIndex, data_changeable_finish);
             mathPhysics_Static.Str_Out_result();
-            double coof1=420/get_data_Changes(comboBox3.SelectedIndex);
-            for (double i= data_graf1[0];i< data_graf1[1];i+= data_graf1[2])
+            draw_graf_line(data_changeable_start, data_changeable_finish, comboBox2.SelectedIndex, 0);
+            draw_graf_line(data_changeable_start, data_changeable_finish, comboBox3.SelectedIndex, 1);
+        }
+        void draw_graf_line(double start_data,double end_data,int select, int color)
+        {
+            int finX = 500;
+            if (start_data>= end_data) { textBoxOut.Text = "неверный диапозон, начальное значение не должно быть больше конечного"; }
+            else
             {
-                set_data_Changes(comboBox1.SelectedIndex, i);
-                mathPhysics_Static.Str_Out_result();
-                y_fin1 = 400-(int)(get_data_Changes(comboBox3.SelectedIndex)* coof1);
-                draw_lin(x_start1, x_step1, y_start1, y_fin1, 0);//зеленая
-                y_start1=y_fin1;
-                x_start1 += x_step1;
-            }
-            GetData();
-            set_data_Changes(comboBox2.SelectedIndex, data_graf2[1]);
-            mathPhysics_Static.Str_Out_result();
-            double coof2 = 420 / get_data_Changes(comboBox4.SelectedIndex);
-            for (double i = data_graf2[0]; i < data_graf2[1]; i += data_graf2[2])
-            {
-                set_data_Changes(comboBox2.SelectedIndex , i);
-                mathPhysics_Static.Str_Out_result();
-                y_fin2 = 400 - (int)(get_data_Changes(comboBox4.SelectedIndex)* coof2);
-                draw_lin(x_start2, x_step2, y_start2, y_fin2, 1);//синяя
-                y_start2= y_fin2;
-                x_start2 += x_step2;
+                double delta_data = end_data - start_data;
+                double step_data_x = delta_data/ finX;
+                int y_start = 0, y_fin_step = 1;
+                for (int i = 0; i < finX+1; i++)
+                {
+                    set_data_Changes(comboBox1.SelectedIndex, i* step_data_x);
+                    mathPhysics_Static.Str_Out_result();
+                    y_fin_step = (int)get_data_Changes(select);
+                    draw_lin(i, 1, y_start, y_fin_step, color);
+                    y_start = y_fin_step;
+                }
             }
         }
+        
         void set_data_Changes(int Get,double data)
         {
             switch(Get)//изменяемое
@@ -212,10 +179,14 @@ namespace GaussGun
             penG = new Pen(Color.Green, 2);
             penB = new Pen(Color.Blue, 2);
             int step_gaf = x_start + x_step;
+            y_start = 400 - y_start;
+            y_fin = 400 - y_fin;
             if (step_gaf > 580) step_gaf = 580;
             if (y_fin > 420) y_fin = 420;
-            if (y_fin < 0) y_fin = 0;
-            if(pen_graf==0)
+            if (y_fin < 0) y_fin = 1;
+            if (y_start < 0) y_start = 0;
+            if (y_start > 420) y_start = 420;
+            if (pen_graf==0)
             { graph.DrawLine(penG, x_start, y_start, step_gaf, y_fin); }
             else
             { graph.DrawLine(penB, x_start, y_start, step_gaf, y_fin); }
@@ -289,16 +260,6 @@ namespace GaussGun
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            radioButton2.Checked = false;
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            radioButton1.Checked = false;
         }
     }
 }

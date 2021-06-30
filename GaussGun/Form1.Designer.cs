@@ -59,36 +59,24 @@ namespace GaussGun
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxSpeed0 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label16 = new System.Windows.Forms.Label();
             this.textBoxListStart1 = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.textBoxListStop1 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBoxListStep1 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBoxListStart2 = new System.Windows.Forms.TextBox();
-            this.textBoxListStop2 = new System.Windows.Forms.TextBox();
-            this.textBoxListStep2 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBoxGraf = new System.Windows.Forms.PictureBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGraf)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(960, 607);
+            this.button1.Location = new System.Drawing.Point(960, 626);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(87, 23);
             this.button1.TabIndex = 0;
@@ -310,10 +298,10 @@ namespace GaussGun
             // 
             // textBoxOut
             // 
-            this.textBoxOut.Location = new System.Drawing.Point(608, 348);
+            this.textBoxOut.Location = new System.Drawing.Point(603, 394);
             this.textBoxOut.Multiline = true;
             this.textBoxOut.Name = "textBoxOut";
-            this.textBoxOut.Size = new System.Drawing.Size(439, 228);
+            this.textBoxOut.Size = new System.Drawing.Size(439, 208);
             this.textBoxOut.TabIndex = 37;
             this.textBoxOut.Text = "1";
             this.textBoxOut.TextChanged += new System.EventHandler(this.textBoxOut_TextChanged);
@@ -364,45 +352,19 @@ namespace GaussGun
             this.label13.TabIndex = 42;
             this.label13.Text = "м/c";
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.radioButton1.Location = new System.Drawing.Point(608, 250);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(91, 19);
-            this.radioButton1.TabIndex = 43;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Одиночный";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.radioButton2.Location = new System.Drawing.Point(608, 290);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(80, 19);
-            this.radioButton2.TabIndex = 44;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Комплекс";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
-            // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label16.Location = new System.Drawing.Point(273, 151);
+            this.label16.Location = new System.Drawing.Point(491, 150);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(131, 15);
+            this.label16.Size = new System.Drawing.Size(122, 15);
             this.label16.TabIndex = 47;
-            this.label16.Text = "Начальное значение 1";
+            this.label16.Text = "Начальное значение";
             // 
             // textBoxListStart1
             // 
-            this.textBoxListStart1.Location = new System.Drawing.Point(404, 148);
+            this.textBoxListStart1.Location = new System.Drawing.Point(622, 147);
             this.textBoxListStart1.Name = "textBoxListStart1";
             this.textBoxListStart1.Size = new System.Drawing.Size(83, 23);
             this.textBoxListStart1.TabIndex = 48;
@@ -412,97 +374,25 @@ namespace GaussGun
             // 
             this.label17.AutoSize = true;
             this.label17.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label17.Location = new System.Drawing.Point(493, 151);
+            this.label17.Location = new System.Drawing.Point(752, 150);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(124, 15);
+            this.label17.Size = new System.Drawing.Size(115, 15);
             this.label17.TabIndex = 49;
-            this.label17.Text = "Конечное значение 1";
+            this.label17.Text = "Конечное значение";
             // 
             // textBoxListStop1
             // 
-            this.textBoxListStop1.Location = new System.Drawing.Point(636, 147);
+            this.textBoxListStop1.Location = new System.Drawing.Point(895, 146);
             this.textBoxListStop1.Name = "textBoxListStop1";
             this.textBoxListStop1.PlaceholderText = "1";
             this.textBoxListStop1.Size = new System.Drawing.Size(77, 23);
             this.textBoxListStop1.TabIndex = 50;
             this.textBoxListStop1.Text = "100";
             // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label18.Location = new System.Drawing.Point(754, 151);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(38, 15);
-            this.label18.TabIndex = 51;
-            this.label18.Text = "Шаг 1";
-            // 
-            // textBoxListStep1
-            // 
-            this.textBoxListStep1.Location = new System.Drawing.Point(816, 147);
-            this.textBoxListStep1.Name = "textBoxListStep1";
-            this.textBoxListStep1.Size = new System.Drawing.Size(100, 23);
-            this.textBoxListStep1.TabIndex = 52;
-            this.textBoxListStep1.Text = "5";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label19.Location = new System.Drawing.Point(273, 189);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(131, 15);
-            this.label19.TabIndex = 53;
-            this.label19.Text = "Начальное значение 2";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label20.Location = new System.Drawing.Point(493, 189);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(124, 15);
-            this.label20.TabIndex = 54;
-            this.label20.Text = "Конечное значение 2";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label21.Location = new System.Drawing.Point(754, 189);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(38, 15);
-            this.label21.TabIndex = 55;
-            this.label21.Text = "Шаг 2";
-            // 
-            // textBoxListStart2
-            // 
-            this.textBoxListStart2.Location = new System.Drawing.Point(404, 186);
-            this.textBoxListStart2.Name = "textBoxListStart2";
-            this.textBoxListStart2.Size = new System.Drawing.Size(83, 23);
-            this.textBoxListStart2.TabIndex = 56;
-            this.textBoxListStart2.Text = "1";
-            // 
-            // textBoxListStop2
-            // 
-            this.textBoxListStop2.Location = new System.Drawing.Point(636, 185);
-            this.textBoxListStop2.Name = "textBoxListStop2";
-            this.textBoxListStop2.Size = new System.Drawing.Size(77, 23);
-            this.textBoxListStop2.TabIndex = 57;
-            this.textBoxListStop2.Text = "5";
-            // 
-            // textBoxListStep2
-            // 
-            this.textBoxListStep2.Location = new System.Drawing.Point(816, 185);
-            this.textBoxListStep2.Name = "textBoxListStep2";
-            this.textBoxListStep2.Size = new System.Drawing.Size(100, 23);
-            this.textBoxListStep2.TabIndex = 58;
-            this.textBoxListStep2.Text = "0,5";
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(717, 225);
+            this.comboBox1.Location = new System.Drawing.Point(601, 261);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(189, 23);
             this.comboBox1.TabIndex = 64;
@@ -511,52 +401,34 @@ namespace GaussGun
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(717, 255);
+            this.comboBox2.Location = new System.Drawing.Point(601, 290);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(189, 23);
-            this.comboBox2.TabIndex = 65;
+            this.comboBox2.TabIndex = 66;
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(717, 285);
+            this.comboBox3.Location = new System.Drawing.Point(601, 320);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(189, 23);
-            this.comboBox3.TabIndex = 66;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(717, 315);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(189, 23);
-            this.comboBox4.TabIndex = 67;
+            this.comboBox3.TabIndex = 67;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label22.Location = new System.Drawing.Point(913, 232);
+            this.label22.Location = new System.Drawing.Point(797, 268);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(86, 15);
+            this.label22.Size = new System.Drawing.Size(77, 15);
             this.label22.TabIndex = 68;
-            this.label22.Text = "Изменяемое 1";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label23.Location = new System.Drawing.Point(913, 262);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(86, 15);
-            this.label23.TabIndex = 69;
-            this.label23.Text = "Изменяемое 2";
+            this.label22.Text = "Изменяемое";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label24.Location = new System.Drawing.Point(913, 292);
+            this.label24.Location = new System.Drawing.Point(797, 297);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(137, 15);
             this.label24.TabIndex = 70;
@@ -566,21 +438,11 @@ namespace GaussGun
             // 
             this.label25.AutoSize = true;
             this.label25.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label25.Location = new System.Drawing.Point(913, 323);
+            this.label25.Location = new System.Drawing.Point(797, 328);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(129, 15);
             this.label25.TabIndex = 71;
             this.label25.Text = "Расчитываемое 2 Blue";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.groupBox1.Location = new System.Drawing.Point(592, 225);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(119, 100);
-            this.groupBox1.TabIndex = 72;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Тип расчета";
             // 
             // pictureBoxGraf
             // 
@@ -590,6 +452,18 @@ namespace GaussGun
             this.pictureBoxGraf.TabIndex = 73;
             this.pictureBoxGraf.TabStop = false;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.checkBox1.Location = new System.Drawing.Point(603, 229);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(144, 19);
+            this.checkBox1.TabIndex = 74;
+            this.checkBox1.Text = "Одночный/комплекс";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.UseWaitCursor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -598,23 +472,14 @@ namespace GaussGun
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1084, 661);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.pictureBoxGraf);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.label24);
-            this.Controls.Add(this.label23);
             this.Controls.Add(this.label22);
-            this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBoxListStep2);
-            this.Controls.Add(this.textBoxListStop2);
-            this.Controls.Add(this.textBoxListStart2);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.label20);
-            this.Controls.Add(this.label19);
-            this.Controls.Add(this.textBoxListStep1);
-            this.Controls.Add(this.label18);
             this.Controls.Add(this.textBoxListStop1);
             this.Controls.Add(this.textBoxListStart1);
             this.Controls.Add(this.textBoxDGun);
@@ -642,15 +507,12 @@ namespace GaussGun
             this.Controls.Add(this.Volt_teg);
             this.Controls.Add(this.textBoxVolt);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.L_solinoid_name);
             this.Controls.Add(this.textBoxOut);
             this.Controls.Add(this.Volt_name);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.groupBox1);
             this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "GausGun";
@@ -692,30 +554,18 @@ namespace GaussGun
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBoxSpeed0;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox textBoxListStart1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox textBoxListStop1;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBoxListStep1;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.TextBox textBoxListStart2;
-        private System.Windows.Forms.TextBox textBoxListStop2;
-        private System.Windows.Forms.TextBox textBoxListStep2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.PictureBox pictureBoxGraf;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
